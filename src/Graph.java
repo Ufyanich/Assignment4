@@ -24,4 +24,20 @@ public class Graph<Vertex> {
             throw new IllegalArgumentException("Vertex " + index + " is out of range");
         }
     }
+
+    public void removeEdge(Vertex source, Vertex var){
+        if(!hasEdge(source, var)) {
+            System.out.println("These two vertices do not have an edge");
+            return;
+        }
+        list.get(source).remove(var);
+        list.get(var).remove(source);
+    }
+
+    public boolean hasEdge(Vertex source, Vertex var){
+        validateVertex(source);
+        validateVertex(var);
+        List<Vertex> neighbors = list.get(source);
+        return neighbors != null && neighbors.contains(var);
+    }
 }

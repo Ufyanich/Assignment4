@@ -8,5 +8,7 @@ public class Main {
         graph.addEdge(1,2);
         graph.addEdge(2,3);
         graph.addEdge(1,3);
+
+        graph.removeEdge(0,3);
     }
 }
