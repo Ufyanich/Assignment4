@@ -13,7 +13,15 @@ public class Graph<Vertex> {
     }
 
     public void addEdge(Vertex source, Vertex var){
+        validateVertex(source);
+        validateVertex(var);
         list.get(source).add(var);
         list.get(var).add(source);
+    }
+
+    private void validateVertex(Vertex index){
+        if(!list.containsKey(index)){
+            throw new IllegalArgumentException("Vertex " + index + " is out of range");
+        }
     }
 }
