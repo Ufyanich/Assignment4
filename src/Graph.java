@@ -60,4 +60,17 @@ public class Graph<Vertex> {
             }
         }
     }
+
+    public void printGraph(){
+        for(Map.Entry<Vertex, List<Vertex>> entry : list.entrySet()){
+            Vertex vertex = entry.getKey();
+            System.out.print("Vertex " + vertex + " connected to: ");
+            List<Vertex> neighbors = entry.getValue();
+            for(Vertex neighbor : neighbors){
+                System.out.print(neighbor + " ");
+            }
+            System.out.println();
+        }
+    }
 }
+
