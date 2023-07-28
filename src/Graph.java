@@ -40,4 +40,24 @@ public class Graph<Vertex> {
         List<Vertex> neighbors = list.get(source);
         return neighbors != null && neighbors.contains(var);
     }
+
+    public void DFS(Vertex startVertex){
+        validateVertex(startVertex);
+
+        Map<Vertex, Boolean> visited= new HashMap<Vertex, Boolean>();
+        for(Vertex vertex : list.keySet()){
+            visited.put(vertex, false);
+        }
+        DFS(startVertex, visited);
+    }
+
+    private void DFS(Vertex vertex, Map<Vertex, Boolean> visited){
+        visited.put(vertex,true);
+        System.out.print(vertex + " ");
+        for(Vertex neighbor : list.get(vertex)){
+            if(!visited.get(neighbor)){
+                DFS(neighbor, visited);
+            }
+        }
+    }
 }
