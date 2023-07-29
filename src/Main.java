@@ -33,5 +33,9 @@ public class Main {
         graph.removeEdge(0,3);
 
         graph.printGraph();
+
+        Direct_graph direct_graph = new Direct_graph();
+
+        direct_graph.DirectGraph(0, 1);
     }
 }
