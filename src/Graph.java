@@ -19,6 +19,8 @@ public class Graph<Vertex> {
         list.get(var).add(source);
     }
 
+
+
     private void validateVertex(Vertex index){
         if(!list.containsKey(index)){
             throw new IllegalArgumentException("Vertex " + index + " is out of range");
@@ -60,6 +62,7 @@ public class Graph<Vertex> {
             }
         }
     }
+
 
     public void printGraph(){
         for(Map.Entry<Vertex, List<Vertex>> entry : list.entrySet()){
