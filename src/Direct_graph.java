@@ -19,15 +19,15 @@ public class Direct_graph<Vertex> {
         return neighbors != null && neighbors.contains(var);
     }
     public void DirectGraph(Vertex source, Vertex var){
+        Vertex var1;
+
         validateVertex(source);
         validateVertex(var);
-        for (source : list.get(source)) {
-            for (var  : list.get(var)) {
-                if (!hasEdge(source, var)) {
-                    list.get(source).add(var);
-                } else {}
-            }
-        }
+
+        if (!hasEdge(source, var)) {
+            list.get(source).add(var);
+        } else { System.out.println("Has Edge") ;}
+
 
 
     }
