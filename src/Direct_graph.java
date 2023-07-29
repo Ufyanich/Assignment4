@@ -21,11 +21,14 @@ public class Direct_graph<Vertex> {
     public void DirectGraph(Vertex source, Vertex var){
         validateVertex(source);
         validateVertex(var);
-
-        for (int i = 0; i < list.size(); i++){
-
+        for (source : list.get(source)) {
+            for (var  : list.get(var)) {
+                if (!hasEdge(source, var)) {
+                    list.get(source).add(var);
+                } else {}
+            }
         }
 
-        list.get(source).add(var);
+
     }
 }
